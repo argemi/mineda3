@@ -1,0 +1,48 @@
+<table border='1'>
+  <tr>
+    <th onclick="fsort(1)">username</th>
+    <th onclick="fsort(2)">Nume</th>
+    <th onclick="fsort(3)">Email</th>
+    <th onclick="fsort(4)">Telefon</th>
+    <th onclick="fsort(5)">TipUser</th>
+    <th onclick="fsort(6)">GrupaVarsta</th>
+  </tr>
+  <!--div class="usertable" style="height:80px; overflow:scroll; display:table-row-group;"-->
+  <!--<div id="ultp">-->
+  
+  <!--tabela propriuzisa-->
+  {userlist}
+    <tr>
+      <td>{username}</td>
+      <td title="{description}">{name}</td> 
+      <td>{email}</td> 
+      <td>{phone}</td> 
+      <td><b>{dentipu}</b></td> 
+      <td>{dengrupv}</td>
+      <td></td>
+    </tr>
+  {/userlist}
+  <!--</div>-->
+  <!-- Randul de filtrare -->
+  <tr id="filtrare" style="background-color:green">
+  <form name="formfilt">
+    <td><input type="text" name="username_filt" title="username_filt" /></td>
+    <td><input type="text" name="name_filt" /></td>
+    <td><input type="text" name="email_filt" /></td>
+    <td><input type="text" name="phone_filt" /></td>
+    <td><select name="dentipu_sel">
+      <option value="nul"></option>
+      {tipulist}
+        <option value="{codtipu}">{dentipu}</option>
+      {/tipulist}
+    </select></td>
+    <td><select name="dengrupv_sel">
+      <option value="nul"></option>
+      {grupvlist}
+        <option value="{codgrupv}">{dengrupv}</option>
+      {/grupvlist}
+    </select></td>
+    <td> <input type="Button" onclick="filt()" name="Filtru" value="Filtru" /> </td>
+  </form>
+  </tr>
+</table>
